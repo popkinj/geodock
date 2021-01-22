@@ -1,0 +1,8 @@
+**/.env
+.vscode/settings.json
+*.swp
+~*
+*.gz
+*.tgz
+*.backup
+*.log
