@@ -9,6 +9,7 @@ docker build -t geodock:1.0 ./
 ```bash
 docker run -d -p 8080:8080 --name geodock geodock:1.0
 ```
+Point your browser to *http://localhost:8080/geoserver/web* and you should see the Geoserver welcome page
 
 ## Logging into container
 ```bash

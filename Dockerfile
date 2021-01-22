@@ -1,11 +1,11 @@
 FROM ubuntu:20.04
 
+# Geoserver version
+ARG GV=2.18.2
+
 # Set the time zone
 ARG TZ=America/Vancouver
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
-# Geoserver version
-ARG GV=2.18.2
 
 # Install a smarter package manager
 RUN apt-get update 
@@ -26,4 +26,5 @@ RUN rm download
 # Expose the Geoserver port
 EXPOSE 8080
 
+# Run Geoserver
 CMD ["sh", "bin/startup.sh"]
