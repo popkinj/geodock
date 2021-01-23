@@ -1,8 +1,14 @@
 # Geoserver Docker Image
 
 ## Building 
+Geoserver has a default password for the *admin* account of *geoserver*. This obviously needs to change. Pass in the new password with the *ADMIN_PASS* environment variable. Create a *.env* file containing something like this:
+```
+ADMIN_PASS=blah
+```
+
+Then run the build
 ```bash
-docker build -t geodock:1.0 ./
+docker build -t geodock:1.0 -e .env --build-arg ./
 ```
 
 ## Running

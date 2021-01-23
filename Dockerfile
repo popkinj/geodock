@@ -17,11 +17,18 @@ WORKDIR /usr/share/geoserver
 RUN aptitude -y install wget
 RUN wget https://sourceforge.net/projects/geoserver/files/GeoServer/$GV/geoserver-$GV-bin.zip/download
 
-# install Geoserver
+# Install Geoserver
 RUN aptitude -y install openjdk-8-jdk
 RUN aptitude -y install unzip
 RUN unzip download
 RUN rm download
+
+# Setup the Admin Account
+RUN aptitude -y install curl
+RUN curl -X PUT \
+  --header 'Content-Type: application/json' \
+  -d '{"newPassword": $ADMIN_PASS}' \
+  http://admin:geoserver@localhost:8080/geoserver/rest/security/masterpw
 
 # Expose the Geoserver port
 EXPOSE 8080
