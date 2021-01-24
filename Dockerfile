@@ -24,12 +24,11 @@ RUN unzip download
 RUN rm download
 
 # This is for configuring Geoserver
-# TODO: Copy over config.sh and run with wait-for-it
+COPY config.sh ./
 RUN aptitude -y install curl wait-for-it
-RUN wait-for-it localhost:8080 -- echo 'Geoserver is running' >> testing.txt
 
 # Expose the Geoserver port
 EXPOSE 8080
 
 # Run Geoserver
-CMD ["sh", "bin/startup.sh"]
+ENTRYPOINT wait-for-it localhost:8080 -- bash config.sh & sh bin/startup.sh 
