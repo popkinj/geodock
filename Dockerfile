@@ -23,13 +23,10 @@ RUN aptitude -y install unzip
 RUN unzip download
 RUN rm download
 
-# May need this for later
-RUN aptitude -y install curl
-# ARG PASS_PAYLOAD="{\"newPassword\": \"$ADMIN_PASS\"}"
-# RUN curl -X PUT \
-  # --header 'Content-Type: application/json' \
-  # -d $PASS_PAYLOAD \
-  # http://admin:geoserver@localhost:8080/geoserver/rest/security/masterpw
+# This is for configuring Geoserver
+# TODO: Copy over config.sh and run with wait-for-it
+RUN aptitude -y install curl wait-for-it
+RUN wait-for-it localhost:8080 -- echo 'Geoserver is running' >> testing.txt
 
 # Expose the Geoserver port
 EXPOSE 8080
