@@ -26,7 +26,7 @@ curl -X POST \
   -L "http://admin:$ADMIN_PASS@localhost:8080/geoserver/rest/workspaces/invasives/wmsstores"
 
 # To connect to the database we have to load the credentials from 
-# envirnment variables into the json
+# environment variables into the json
 sed -i s/fake_server/$DB_HOST/ json/create-invasives-store.json 
 sed -i s/fake_port/$DB_PORT/ json/create-invasives-store.json 
 sed -i s/fake_database/$DB_DATABASE/ json/create-invasives-store.json 
