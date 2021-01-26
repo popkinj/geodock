@@ -18,3 +18,9 @@ curl -X PUT \
   --header 'Content-Type: application/json' \
   -d "{\"workspace\":{ \"name\":\"invasives\" }}" \
   -L "http://admin:$ADMIN_PASS@localhost:8080/geoserver/rest/workspaces/default"
+
+# Create BCGW data store
+curl -X POST \
+  --header 'Content-Type: application/json' \
+  -d "@json/create-bcgw-store.json" \
+  -L "http://admin:data4me@localhost:8080/geoserver/rest/workspaces/invasives/wmsstores"
