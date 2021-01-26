@@ -24,8 +24,7 @@ RUN unzip download
 RUN rm download
 
 # This is for configuring Geoserver
-COPY config.sh ./
-COPY json ./
+COPY . ./
 RUN aptitude -y install curl wait-for-it
 
 # Expose the Geoserver port

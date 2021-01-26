@@ -1,6 +1,6 @@
 {
   "dataStore": {
-    "name": "nyc",
+    "name": "Invasives",
     "description":"Spatial data services specific to Invasives BC.",
     "connectionParameters": {
       "entry": [
