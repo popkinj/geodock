@@ -1,0 +1,15 @@
+{
+  "dataStore": {
+    "name": "nyc",
+    "connectionParameters": {
+      "entry": [
+        {"@key":"host","$":"fake_server"},
+        {"@key":"port","$":"fake_port"},
+        {"@key":"database","$":"fake_database"},
+        {"@key":"user","$":"fake_user"},
+        {"@key":"passwd","$":"fake_password"},
+        {"@key":"dbtype","$":"postgis"}
+      ]
+    }
+  }
+}

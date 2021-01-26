@@ -1,7 +1,8 @@
-{"wmsStore": {
-  "name":"BCGW",
-  "type":"WMS",
-  "capabilitiesURL": "http://openmaps.gov.bc.ca/geo/ows?service=wms&version=1.3.0&request=GetCapabilities",
-  "description":"Proxying layers from the BC Geographic Warehouse (BCGW)"
+{
+  "wmsStore": {
+    "name":"BCGW",
+    "type":"WMS",
+    "capabilitiesURL": "http://openmaps.gov.bc.ca/geo/ows?service=wms&version=1.3.0&request=GetCapabilities",
+    "description":"Proxying layers from the BC Geographic Warehouse (BCGW)"
   }
 }

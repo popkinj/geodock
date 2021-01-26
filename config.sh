@@ -23,4 +23,14 @@ curl -X PUT \
 curl -X POST \
   --header 'Content-Type: application/json' \
   -d "@json/create-bcgw-store.json" \
-  -L "http://admin:data4me@localhost:8080/geoserver/rest/workspaces/invasives/wmsstores"
+  -L "http://admin:$ADMIN_PASS@localhost:8080/geoserver/rest/workspaces/invasives/wmsstores"
+
+# To connect to the database we have to load the credentials from 
+# envirnment variables into the json
+
+
+# Create Invasives data store
+curl -X POST \
+  --header 'Content-Type: application/json' \
+  -d "@json/create-invasives-store.json" \
+  -L "http://admin:$ADMIN_PASS@localhost:8080/geoserver/rest/workspaces/invasives/datastores"
