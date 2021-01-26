@@ -1,6 +1,7 @@
 {
   "dataStore": {
     "name": "nyc",
+    "description":"Spatial data services specific to Invasives BC.",
     "connectionParameters": {
       "entry": [
         {"@key":"host","$":"fake_server"},

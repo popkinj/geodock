@@ -27,7 +27,11 @@ curl -X POST \
 
 # To connect to the database we have to load the credentials from 
 # envirnment variables into the json
-
+sed -i s/fake_server/$DB_HOST/ json/create-invasives-store.json 
+sed -i s/fake_port/$DB_PORT/ json/create-invasives-store.json 
+sed -i s/fake_database/$DB_DATABASE/ json/create-invasives-store.json 
+sed -i s/fake_user/$DB_USER/ json/create-invasives-store.json 
+sed -i s/fake_password/$DB_PASSWORD/ json/create-invasives-store.json 
 
 # Create Invasives data store
 curl -X POST \
