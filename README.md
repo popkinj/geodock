@@ -32,5 +32,13 @@ docker system prune -a
 
 ## Running in OpenShift
 ```bash
-oc new-app --name=geodock --env-file=.env/dev.sh https://github.com/popkinj/geodock.git
+oc new-app --name=invasivesbci-geoserver-dev \
+--env-file=.env/dev.sh https://github.com/popkinj/geodock.git
+```
+
+## Cleaning up Openshift
+```bash
+oc get all --selector app=invasivesbci-geoserver-dev
+# If everything found can be deleted
+oc delete all --selector app=invasivesbci-geoserver-dev
 ```
