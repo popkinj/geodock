@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM debian:bullseye-slim
 
 # Geoserver version
 ARG GV=2.18.2
@@ -15,20 +15,21 @@ RUN apt-get -y install aptitude
 RUN mkdir /usr/share/geoserver
 WORKDIR /usr/share/geoserver
 RUN aptitude -y install wget
-RUN wget https://sourceforge.net/projects/geoserver/files/GeoServer/$GV/geoserver-$GV-bin.zip/download
+# RUN wget https://sourceforge.net/projects/geoserver/files/GeoServer/$GV/geoserver-$GV-bin.zip/download
 
 # Install Geoserver
-RUN aptitude -y install openjdk-8-jdk
-RUN aptitude -y install unzip
-RUN unzip download
-RUN rm download
+# RUN aptitude -y install openjdk-8-jdk
+# RUN aptitude -y install unzip
+# RUN unzip download
+# RUN rm download
 
 # This is for configuring Geoserver
-COPY . ./
-RUN aptitude -y install curl wait-for-it
+# COPY . ./
+# RUN aptitude -y install curl wait-for-it
 
 # Expose the Geoserver port
-EXPOSE 8080
+# EXPOSE 8080
 
 # Run and configure Geoserver
-ENTRYPOINT wait-for-it localhost:8080 -- bash config.sh & sh bin/startup.sh 
+# ENTRYPOINT wait-for-it localhost:8080 -- bash config.sh & sh bin/startup.sh 
+ENTRYPOINT ["tail", "-f", "/dev/null"]
