@@ -21,7 +21,7 @@ RUN wget https://sourceforge.net/projects/geoserver/files/GeoServer/$GV/geoserve
 RUN aptitude -y install openjdk-11-jdk
 RUN aptitude -y install unzip
 RUN unzip download
-RUN chmod 777 data_dir
+RUN chmod -R 777 data_dir
 RUN rm download
 
 # This is for configuring Geoserver
