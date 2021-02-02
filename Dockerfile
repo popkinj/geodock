@@ -1,9 +1,5 @@
 FROM ubuntu:20.04
 
-RUN useradd --system -s /sbin/nologin someuser
-
-USER someuser
-
 # Geoserver version
 ARG GV=2.18.2
 
