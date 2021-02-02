@@ -15,7 +15,7 @@ Substituting *new_password* for your new password.
 
 Then run docker like this:
 ```bash
-docker run -d -p 8080:8080 --name geodock --env-file .env geodock:1.0
+docker run -d -p 8080:8080 --name geodock --env-file .env/local.sh geodock:1.0
 ```
 Point your browser to *http://localhost:8080/geoserver/web* and you should see the Geoserver welcome page
 
@@ -28,4 +28,9 @@ docker exec -t -i geodock /bin/bash
 ```bash
 docker stop geodock
 docker system prune -a
+```
+
+## Running in OpenShift
+```bash
+oc new-app --name=geodock --env-file=.env/dev.sh https://github.com/popkinj/geodock.git
 ```
