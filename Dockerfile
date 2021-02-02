@@ -13,6 +13,7 @@ RUN apt-get -y install aptitude
 
 # Download Geoserver
 RUN mkdir /usr/share/geoserver
+# Change permissions of geoserver directory... World writable?
 WORKDIR /usr/share/geoserver
 RUN aptitude -y install wget
 RUN wget https://sourceforge.net/projects/geoserver/files/GeoServer/$GV/geoserver-$GV-bin.zip/download
@@ -21,6 +22,7 @@ RUN wget https://sourceforge.net/projects/geoserver/files/GeoServer/$GV/geoserve
 RUN aptitude -y install openjdk-11-jdk
 RUN aptitude -y install unzip
 RUN unzip download
+RUN chmod 777 data_dir
 RUN rm download
 
 # This is for configuring Geoserver
