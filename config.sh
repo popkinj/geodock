@@ -1,5 +1,5 @@
 # Geoserver needs a bit of time to get ready
-sleep 10
+sleep 120
 
 # Change the admin account password
 curl -X PUT \
