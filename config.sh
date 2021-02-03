@@ -38,3 +38,5 @@ curl -X POST \
   --header 'Content-Type: application/json' \
   -d "@json/create-invasives-store.json" \
   -L "http://admin:$ADMIN_PASS@localhost:8080/geoserver/rest/workspaces/invasives/datastores"
+
+touch success
