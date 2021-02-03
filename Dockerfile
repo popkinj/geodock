@@ -21,11 +21,11 @@ RUN wget https://sourceforge.net/projects/geoserver/files/GeoServer/$GV/geoserve
 RUN aptitude -y install openjdk-11-jdk
 RUN aptitude -y install unzip
 RUN unzip download
-RUN chmod -R 777 data_dir
 RUN rm download
 
 # This is for configuring Geoserver
 COPY . ./
+RUN chmod -R 777 /usr/share/geoserver
 RUN aptitude -y install curl wait-for-it
 
 # Expose the Geoserver port
