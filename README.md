@@ -1,5 +1,5 @@
 # Geoserver Docker Image
-**Deprecated** - All new development will occure in the office BC Gov repo: https://github.com/bcgov/geodock.
+**Deprecated** - All new development will occur in the official BC Gov repo: https://github.com/bcgov/geodock.
 
 ## Building 
 Run the build
